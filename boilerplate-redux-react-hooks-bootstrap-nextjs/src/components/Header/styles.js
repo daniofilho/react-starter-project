@@ -14,6 +14,7 @@ export const ContainerHeader = styled.div`
 
   .navigation {
     display: flex;
+    align-items: center;
     svg {
       margin-right: 10px;
     }

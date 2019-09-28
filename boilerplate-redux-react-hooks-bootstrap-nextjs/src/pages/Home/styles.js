@@ -10,7 +10,9 @@ export const ContainerHome = styled.div`
       padding: 10px 20px;
     }
   }
+`;
 
-  .col {
-  }
+export const Banner = styled.img`
+  width: 100%;
+  max-width: 100%;
 `;

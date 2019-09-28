@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { loadGetInitialProps } from 'next-server/dist/lib/utils';
 import ReactGA from 'react-ga';
 
-export default () => Composed =>
-  class extends Component {
-    // necessário repassar essa função para que o getInitialProps
-    // de cada componente não seja perdido
-    static getInitialProps(ctx) {
-      return loadGetInitialProps(Composed, ctx);
+export default App => {
+  return class AppWithAnalytics extends React.Component {
+    static async getInitialProps(ctx) {
+      return loadGetInitialProps(App, ctx);
     }
 
     componentDidMount() {
@@ -15,9 +13,11 @@ export default () => Composed =>
       ReactGA.initialize('ID_ANALYTICS');
       // Avisa o Google Anaylytics quando houver mudança de rota
       ReactGA.pageview(window.location.pathname);
+      console.log('ReactGA Event, page: ', window.location.pathname);
     }
 
     render() {
-      return <Composed {...this.props} />;
+      return <App {...this.props} />;
     }
   };
+};

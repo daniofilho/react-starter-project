@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
+
+import Head from 'next/head';
 
 import { Container, Row, Col } from 'reactstrap';
-import { ContainerHome } from './styles';
+import { ContainerHome, Banner } from './styles';
 
 import Header from '~/components/Header';
 
@@ -17,7 +20,14 @@ export default function Home() {
 
   return (
     <ContainerHome>
+      <Head>
+        <title>Home</title>
+      </Head>
+
       <Header />
+
+      <Banner src="./static/react_banner.png" alt="React" />
+
       <Container>
         <Row>
           <Col>.col</Col>

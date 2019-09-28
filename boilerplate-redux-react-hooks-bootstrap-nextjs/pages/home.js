@@ -1,23 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import { connect } from 'react-redux';
 
-import Link from 'next/link';
 import Head from 'next/head';
 
-import withAnalytics from '~/hocs/withAnalytics';
+import Home from '~/pages/Home';
 
-const Title = styled.h1`
-  color: #069;
-  font-size: 40px;
-`;
-
-const Home = () => (
-  <div>
+const MyHome = () => (
+  <>
     <Head>
       <title>Home</title>
     </Head>
-    <Title>Hello World2</Title>
-  </div>
+    <Home />
+  </>
 );
-
-export default withAnalytics()(Home);
+export default connect(state => state)(MyHome);

@@ -1,4 +1,8 @@
-module.exports = {
-  // Ignora o nome dos arquivos nas rotas e utiliza apenas dos definidos no arquivo de rotas
+const withCSS = require('@zeit/next-css');
+
+module.exports = withCSS({
   useFileSystemPublicRoutes: false,
-};
+  cssLoaderOptions: {
+    url: false,
+  },
+});

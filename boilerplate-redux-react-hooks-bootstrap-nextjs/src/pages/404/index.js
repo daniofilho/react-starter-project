@@ -6,7 +6,7 @@ import Wrapper from '~/components/Wrapper';
 
 import * as NavigationActions from '~/store/modules/navigation/actions';
 
-export default function SignIn() {
+export default function Page404() {
   const dispatch = useDispatch();
 
   useEffect(() => {
